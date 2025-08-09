@@ -1,5 +1,6 @@
 package co.edu.uniquindio.guiveterinaria;
 
+import co.edu.uniquindio.guiveterinaria.viewController.ConsultaMedicaViewController;
 import co.edu.uniquindio.guiveterinaria.viewController.MascotaViewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -83,12 +84,28 @@ public class App extends Application {
         }
     }
 
+    public void openCrudConsultaMedica() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("crudConsultaMedica.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            ConsultaMedicaViewController consultaMedicaViewController = loader.getController();
+            consultaMedicaViewController.se tApp(this);
+
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
 
     //servicios
     public void inicializarData(){
         Cliente cliente = new Cliente("12233", "juan", "apellido");
         empresa.agregarCliente(cliente);
     }
-
 
 }

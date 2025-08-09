@@ -21,6 +21,9 @@ public class PrimaryController {
     private Button primaryButton1;
 
     @FXML
+    private Button primaryButton2;
+
+    @FXML
     void onOpenCrudCliente() {
         app.openCrudCliente();
     }
@@ -28,6 +31,11 @@ public class PrimaryController {
     @FXML
     void onOpenCrudMascota() {
         app.openCrudMascota();
+    }
+
+    @FXML
+    void onOpenCrudConsultaMedica() {
+        app.openCrudConsultaMedica();
     }
 
     public void setApp(App app) {

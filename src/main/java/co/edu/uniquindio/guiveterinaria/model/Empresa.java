@@ -7,11 +7,13 @@ public class Empresa {
     private String nombre;
     private Collection<Cliente> clientes;
     private Collection<Mascota> mascotas;
+    private Collection<ConsultaMedica> consultaMedicas;
 
     public Empresa(String nombre) {
         this.nombre = nombre;
         clientes = new LinkedList<>();
         mascotas = new LinkedList<>();
+        consultaMedicas = new LinkedList<>();
     }
 
     public String getNombre() {
@@ -28,6 +30,14 @@ public class Empresa {
 
     public Collection<Mascota> getMascotas() {
         return mascotas;
+    }
+
+    public Collection<ConsultaMedica> getConsultaMedicas() {
+        return consultaMedicas;
+    }
+
+    public void setConsultaMedicas(Collection<ConsultaMedica> consultaMedicas) {
+        this.consultaMedicas = consultaMedicas;
     }
 
     public void setClientes(Collection<Cliente> clientes) {
@@ -56,6 +66,15 @@ public class Empresa {
         return centinela;
     }
 
+    public boolean agregarConsultaMedica(ConsultaMedica consultaMedica) {
+        boolean centinela = false;
+        if (!verificarConsultaMedica(consultaMedica.getNumeroConsulta())) {
+            consultaMedicas.add(consultaMedica);
+            centinela = true;
+        }
+        return centinela;
+    }
+
     public boolean eliminarCliente(String cedula) {
         boolean centinela = false;
         for (Cliente cliente : clientes) {
@@ -73,6 +92,18 @@ public class Empresa {
         for (Mascota mascota : mascotas) {
             if (mascota.getIDVeterinaria().equals(iDVeterinaria)) {
                 mascotas.remove(mascota);
+                centinela = true;
+                break;
+            }
+        }
+        return centinela;
+    }
+
+    public boolean eliminarConsultaMedica(int numeroConsulta) {
+        boolean centinela = false;
+        for (ConsultaMedica consultaMedica : consultaMedicas) {
+            if (consultaMedica.getNumeroConsulta() == (numeroConsulta)) {
+                consultaMedicas.remove(consultaMedica);
                 centinela = true;
                 break;
             }
@@ -108,6 +139,16 @@ public class Empresa {
         boolean centinela = false;
         for (Mascota mascota : mascotas) {
             if (mascota.getIDVeterinaria().equals(iDVeterinaria)) {
+                centinela = true;
+            }
+        }
+        return centinela;
+    }
+
+    public boolean verificarConsultaMedica(int numeroConsulta) {
+        boolean centinela = false;
+        for (ConsultaMedica consultaMedica : consultaMedicas) {
+            if (consultaMedica.getNumeroConsulta() == (numeroConsulta)) {
                 centinela = true;
             }
         }
