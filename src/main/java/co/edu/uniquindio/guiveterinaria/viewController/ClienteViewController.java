@@ -40,6 +40,9 @@ public class ClienteViewController {
     private Button btnEliminar;
 
     @FXML
+    private Button btnRegresar;
+
+    @FXML
     private Button btnActualizarCliente;
 
     @FXML
@@ -79,6 +82,11 @@ public class ClienteViewController {
     @FXML
     void onEliminar() {
         eliminarCliente();
+    }
+
+    @FXML
+    void onRegresar() {
+        app.openViewPrincipal();
     }
 
     @FXML

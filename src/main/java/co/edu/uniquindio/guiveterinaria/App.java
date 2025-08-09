@@ -27,7 +27,7 @@ public class App extends Application {
         openViewPrincipal();
     }
 
-    private void openViewPrincipal() {
+    public void openViewPrincipal() {
         inicializarData();
         try {
             FXMLLoader loader = new FXMLLoader();

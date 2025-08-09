@@ -26,6 +26,9 @@ public class MascotaViewController {
     private Button btnEliminar;
 
     @FXML
+    private Button btnRegresar;
+
+    @FXML
     private TableColumn<Mascota, String> tbcEspecie;
 
     @FXML
@@ -56,6 +59,11 @@ public class MascotaViewController {
     @FXML
     void onEliminar() {
         eliminarMascota();
+    }
+
+    @FXML
+    void onRegresar() {
+        app.openViewPrincipal();
     }
 
     @FXML
