@@ -68,6 +68,18 @@ public class Empresa {
         return centinela;
     }
 
+    public boolean eliminarMascota(String iDVeterinaria) {
+        boolean centinela = false;
+        for (Mascota mascota : mascotas) {
+            if (mascota.getIDVeterinaria().equals(iDVeterinaria)) {
+                mascotas.remove(mascota);
+                centinela = true;
+                break;
+            }
+        }
+        return centinela;
+    }
+
     public boolean actualizarCliente(String cedula, Cliente actualizado) {
         boolean centinela = false;
         for (Cliente cliente : clientes) {

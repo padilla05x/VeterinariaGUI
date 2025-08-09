@@ -61,6 +61,7 @@
                               <TableColumn fx:id="tbcEspecie" prefWidth="75.0" text="Especie" />
                            </columns>
                         </TableView>
+                        <Button fx:id="btnEliminar" layoutX="165.0" layoutY="222.0" mnemonicParsing="false" onAction="#onEliminar" prefHeight="25.0" prefWidth="97.0" text="Eliminar" />
                      </children>
                   </AnchorPane>
                </items>

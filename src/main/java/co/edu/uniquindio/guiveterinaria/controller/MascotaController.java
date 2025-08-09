@@ -21,4 +21,8 @@ public class MascotaController {
     public Collection<Mascota> obtenerListaMascotas() {
         return empresa.getMascotas();
     }
+
+    public boolean eliminarMascota(String iDVeterinaria) {
+        return empresa.eliminarMascota(iDVeterinaria);
+    }
 }

@@ -23,6 +23,9 @@ public class MascotaViewController {
     private Button btbAgregarMascota;
 
     @FXML
+    private Button btnEliminar;
+
+    @FXML
     private TableColumn<Mascota, String> tbcEspecie;
 
     @FXML
@@ -48,6 +51,11 @@ public class MascotaViewController {
     @FXML
     void onAgregarMascota() {
         agregarMascota();
+    }
+
+    @FXML
+    void onEliminar() {
+        eliminarMascota();
     }
 
     @FXML
@@ -111,6 +119,14 @@ public class MascotaViewController {
     private Mascota buildMascota() {
         Mascota mascota = new Mascota(txtIDVeterinaria.getText(), txtNombre.getText(), txtEspecie.getText());
         return mascota;
+    }
+
+    private void eliminarMascota() {
+        if (mascotaController.eliminarMascota(txtIDVeterinaria.getText())) {
+            listMascotas.remove(selectedMascota);
+            limpiarCamposMascota();
+            limpiarSeleccion();
+        }
     }
 
     private void limpiarSeleccion() {
