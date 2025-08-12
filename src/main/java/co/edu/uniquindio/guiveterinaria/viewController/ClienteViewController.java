@@ -49,16 +49,22 @@ public class ClienteViewController {
     private TableColumn<Cliente, String> tbcNombre;
 
     @FXML
-    private TextField txtApellido;
+    private TextField txtTelefono;
 
     @FXML
-    private TableColumn<Cliente, String> tbcApellido;
+    private TextField txtDireccion;
+
+    @FXML
+    private TableColumn<Cliente, String> tbcTelefono;
 
     @FXML
     private Button btbAgregarCliente;
 
     @FXML
     private TableColumn<Cliente, String> tbcCedula;
+
+    @FXML
+    private TableColumn<Cliente, String> tbcDireccion;
 
     @FXML
     private TextField txtCedula;
@@ -116,7 +122,8 @@ public class ClienteViewController {
     private void initDataBinding() {
         tbcCedula.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCedula()));
         tbcNombre.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
-        tbcApellido.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getApellido()));
+        tbcTelefono.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getTelefono()));
+        tbcDireccion.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDireccion()));
         // Usamos SimpleObjectProperty para manejar Double y Integer correctamente
     }
 
@@ -135,7 +142,8 @@ public class ClienteViewController {
         if (cliente != null) {
             txtCedula.setText(cliente.getCedula());
             txtNombre.setText(cliente.getNombre());
-            txtApellido.setText(cliente.getApellido());
+            txtTelefono.setText(cliente.getTelefono());
+            txtDireccion.setText(cliente.getDireccion());
         }
     }
 
@@ -148,7 +156,7 @@ public class ClienteViewController {
     }
 
     private Cliente buildCliente() {
-        Cliente cliente = new Cliente(txtCedula.getText(), txtNombre.getText(), txtApellido.getText());
+        Cliente cliente = new Cliente(txtCedula.getText(), txtNombre.getText(), txtTelefono.getText(), txtDireccion.getText());
         return cliente;
     }
 
@@ -184,7 +192,8 @@ public class ClienteViewController {
     private void limpiarCamposCliente() {
         txtCedula.clear();
         txtNombre.clear();
-        txtApellido.clear();
+        txtTelefono.clear();
+        txtDireccion.clear();
     }
 
     public void setApp(App app) {

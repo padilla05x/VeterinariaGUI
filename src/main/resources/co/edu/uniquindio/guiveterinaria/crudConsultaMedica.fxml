@@ -63,20 +63,20 @@
                                           <Font size="18.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="txtDiagnostico" layoutX="22.0" layoutY="198.0" prefHeight="25.0" prefWidth="108.0" />
                                     <Label layoutX="219.0" layoutY="171.0" prefHeight="27.0" prefWidth="108.0" text="Tratamiento:">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="txtTratamiento" layoutX="219.0" layoutY="198.0" prefHeight="25.0" prefWidth="108.0" />
+                                    <TextField fx:id="txtTratamiento" layoutX="22.0" layoutY="198.0" prefHeight="25.0" prefWidth="108.0" />
+                                    <TextField fx:id="txtDiagnostico" layoutX="219.0" layoutY="198.0" prefHeight="25.0" prefWidth="108.0" />
                                  </children>
                               </Pane>
                            </children>
                         </AnchorPane>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="271.0" prefWidth="645.0">
                            <children>
-                              <TableView fx:id="tblListConsultas" layoutX="7.0" layoutY="7.0" prefHeight="206.0" prefWidth="455.0">
+                              <TableView fx:id="tblListConsultaMedicas" layoutX="7.0" layoutY="7.0" prefHeight="206.0" prefWidth="455.0">
                                  <columns>
                                     <TableColumn fx:id="tbcINumConsulta" prefWidth="75.0" text="# Consulta" />
                                     <TableColumn fx:id="tbcFecha" prefWidth="75.0" text="Fecha" />

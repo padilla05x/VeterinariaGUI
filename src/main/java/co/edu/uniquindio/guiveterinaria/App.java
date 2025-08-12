@@ -1,5 +1,6 @@
 package co.edu.uniquindio.guiveterinaria;
 
+import co.edu.uniquindio.guiveterinaria.model.Mascota;
 import co.edu.uniquindio.guiveterinaria.viewController.ConsultaMedicaViewController;
 import co.edu.uniquindio.guiveterinaria.viewController.MascotaViewController;
 import javafx.application.Application;
@@ -104,8 +105,13 @@ public class App extends Application {
 
     //servicios
     public void inicializarData(){
-        Cliente cliente = new Cliente("12233", "juan", "apellido");
+        Cliente cliente = new Cliente("1221", "Santiago", "3017594959"
+                , "Cra 19N");
         empresa.agregarCliente(cliente);
+
+        Mascota mascota = new Mascota("Tommy", "Perro", "4546P"
+                , "Pincher", "9 Meses");
+        empresa.agregarMascota(mascota);
     }
 
 }

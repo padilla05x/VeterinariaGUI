@@ -22,7 +22,7 @@ public class ConsultaMedicaController {
         return empresa.getConsultaMedicas();
     }
 
-    public boolean eliminarConsultaMedica(int numeroConsulta) {
+    public boolean eliminarConsultaMedica(String numeroConsulta) {
         return empresa.eliminarConsultaMedica(numeroConsulta);
     }
 }

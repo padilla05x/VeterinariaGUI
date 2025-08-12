@@ -99,10 +99,10 @@ public class Empresa {
         return centinela;
     }
 
-    public boolean eliminarConsultaMedica(int numeroConsulta) {
+    public boolean eliminarConsultaMedica(String numeroConsulta) {
         boolean centinela = false;
         for (ConsultaMedica consultaMedica : consultaMedicas) {
-            if (consultaMedica.getNumeroConsulta() == (numeroConsulta)) {
+            if (consultaMedica.getNumeroConsulta().equals(numeroConsulta)) {
                 consultaMedicas.remove(consultaMedica);
                 centinela = true;
                 break;
@@ -117,7 +117,8 @@ public class Empresa {
             if (cliente.getCedula().equals(cedula)) {
                 cliente.setCedula(actualizado.getCedula());
                 cliente.setNombre(actualizado.getNombre());
-                cliente.setApellido(actualizado.getApellido());
+                cliente.setTelefono(actualizado.getTelefono());
+                cliente.setDireccion(actualizado.getDireccion());
                 centinela = true;
                 break;
             }
@@ -145,10 +146,10 @@ public class Empresa {
         return centinela;
     }
 
-    public boolean verificarConsultaMedica(int numeroConsulta) {
+    public boolean verificarConsultaMedica(String numeroConsulta) {
         boolean centinela = false;
         for (ConsultaMedica consultaMedica : consultaMedicas) {
-            if (consultaMedica.getNumeroConsulta() == (numeroConsulta)) {
+            if (consultaMedica.getNumeroConsulta().equals(numeroConsulta)) {
                 centinela = true;
             }
         }
