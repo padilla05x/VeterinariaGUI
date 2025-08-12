@@ -90,7 +90,7 @@ public class App extends Application {
             loader.setLocation(App.class.getResource("crudConsultaMedica.fxml"));
             AnchorPane rootLayout = (AnchorPane) loader.load();
             ConsultaMedicaViewController consultaMedicaViewController = loader.getController();
-            consultaMedicaViewController.se tApp(this);
+            consultaMedicaViewController.setApp(this);
 
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);

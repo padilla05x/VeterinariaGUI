@@ -38,6 +38,12 @@ public class MascotaViewController {
     private TableColumn<Mascota, String> tbcNombre;
 
     @FXML
+    private TableColumn<Mascota, String> tbcEdad;
+
+    @FXML
+    private TableColumn<Mascota, String> tbcRaza;
+
+    @FXML
     private TableView<Mascota> tblListMascota;
 
     @FXML
@@ -48,6 +54,12 @@ public class MascotaViewController {
 
     @FXML
     private TextField txtNombre;
+
+    @FXML
+    private TextField txtRaza;
+
+    @FXML
+    private TextField txtEdad;
 
     private App app;
 
@@ -94,6 +106,8 @@ public class MascotaViewController {
         tbcIDVet.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getIDVeterinaria()));
         tbcNombre.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
         tbcEspecie.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEspecie()));
+        tbcRaza.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getRaza()));
+        tbcEdad.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEdad()));
         // Usamos SimpleObjectProperty para manejar Double y Integer correctamente
     }
 
@@ -113,6 +127,8 @@ public class MascotaViewController {
             txtIDVeterinaria.setText(mascota.getIDVeterinaria());
             txtNombre.setText(mascota.getNombre());
             txtEspecie.setText(mascota.getEspecie());
+            txtEdad.setText(mascota.getEdad());
+            txtRaza.setText(mascota.getRaza());
         }
     }
 
@@ -125,7 +141,7 @@ public class MascotaViewController {
     }
 
     private Mascota buildMascota() {
-        Mascota mascota = new Mascota(txtIDVeterinaria.getText(), txtNombre.getText(), txtEspecie.getText());
+        Mascota mascota = new Mascota(txtIDVeterinaria.getText(), txtNombre.getText(), txtEspecie.getText(), txtEdad.getText(), txtRaza.getText());
         return mascota;
     }
 
@@ -146,6 +162,8 @@ public class MascotaViewController {
         txtIDVeterinaria.clear();
         txtNombre.clear();
         txtEspecie.clear();
+        txtEdad.clear();
+        txtRaza.clear();
     }
 
     public void setApp(App app) {

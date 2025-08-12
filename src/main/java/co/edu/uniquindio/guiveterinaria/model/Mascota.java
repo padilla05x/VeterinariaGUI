@@ -1,12 +1,14 @@
 package co.edu.uniquindio.guiveterinaria.model;
 
 public class Mascota {
-    private String nombre, especie, iDVeterinaria;
+    private String nombre, especie, iDVeterinaria,raza, edad;
 
-    public Mascota(String nombre, String especie, String iDVeterinaria) {
+    public Mascota(String nombre, String especie, String iDVeterinaria, String raza, String edad) {
         this.nombre = nombre;
         this.especie = especie;
         this.iDVeterinaria = iDVeterinaria;
+        this.raza = raza;
+        this.edad = edad;
     }
 
     public String getNombre() {
@@ -32,4 +34,22 @@ public class Mascota {
     public void setiDVeterinaria(String iDVeterinaria) {
         this.iDVeterinaria = iDVeterinaria;
     }
+
+    public String getRaza() {
+        return raza;
+    }
+
+    public void setRaza(String raza) {
+        this.raza = raza;
+    }
+
+    public String getEdad() {
+        return edad;
+    }
+
+    public void setEdad(String edad) {
+        this.edad = edad;
+    }
+
+
 }
