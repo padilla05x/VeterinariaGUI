@@ -8,9 +8,10 @@
 <VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.guiveterinaria.viewController.PrimaryController">
     <children>
         <Label text="Bienvenido a la Veterinaria" />
-        <Button fx:id="primaryButton" onAction="#onOpenCrudCliente" text="Gestión de clientes" />
+        <Button fx:id="primaryButton" onAction="#onOpenCrudCliente" prefHeight="25.0" prefWidth="124.0" text="Gestión de clientes" />
       <Button fx:id="primaryButton1" onAction="#onOpenCrudMascota" text="Gestión de mascotas" />
       <Button fx:id="primaryButton2" onAction="#onOpenCrudConsultaMedica" text="Gestión de consultas" />
+      <Button fx:id="primaryButton3" onAction="#onOpenCrudVeterinario" text="Gestión de veterinarios" />
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

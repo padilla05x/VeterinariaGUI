@@ -8,12 +8,14 @@ public class Empresa {
     private Collection<Cliente> clientes;
     private Collection<Mascota> mascotas;
     private Collection<ConsultaMedica> consultaMedicas;
+    private Collection<Veterinario> veterinarios;
 
     public Empresa(String nombre) {
         this.nombre = nombre;
         clientes = new LinkedList<>();
         mascotas = new LinkedList<>();
         consultaMedicas = new LinkedList<>();
+        veterinarios = new LinkedList<>();
     }
 
     public String getNombre() {
@@ -48,6 +50,14 @@ public class Empresa {
         this.mascotas = mascotas;
     }
 
+    public Collection<Veterinario> getVeterinarios() {
+        return veterinarios;
+    }
+
+    public void setVeterinarios(Collection<Veterinario> veterinarios) {
+        this.veterinarios = veterinarios;
+    }
+
     public boolean agregarCliente(Cliente cliente) {
         boolean centinela = false;
         if (!verificarCliente(cliente.getCedula())) {
@@ -70,6 +80,15 @@ public class Empresa {
         boolean centinela = false;
         if (!verificarConsultaMedica(consultaMedica.getNumeroConsulta())) {
             consultaMedicas.add(consultaMedica);
+            centinela = true;
+        }
+        return centinela;
+    }
+
+    public boolean agregarVeterinario(Veterinario veterinario) {
+        boolean centinela = false;
+        if (!verificarVeterinario(veterinario.getLicencia())) {
+            veterinarios.add(veterinario);
             centinela = true;
         }
         return centinela;
@@ -104,6 +123,18 @@ public class Empresa {
         for (ConsultaMedica consultaMedica : consultaMedicas) {
             if (consultaMedica.getNumeroConsulta().equals(numeroConsulta)) {
                 consultaMedicas.remove(consultaMedica);
+                centinela = true;
+                break;
+            }
+        }
+        return centinela;
+    }
+
+    public boolean eliminarVeterinario(String licencia) {
+        boolean centinela = false;
+        for (Veterinario veterinario : veterinarios) {
+            if (veterinario.getLicencia().equals(licencia)) {
+                veterinarios.remove(veterinario);
                 centinela = true;
                 break;
             }
@@ -150,6 +181,16 @@ public class Empresa {
         boolean centinela = false;
         for (ConsultaMedica consultaMedica : consultaMedicas) {
             if (consultaMedica.getNumeroConsulta().equals(numeroConsulta)) {
+                centinela = true;
+            }
+        }
+        return centinela;
+    }
+
+    public boolean verificarVeterinario(String licencia) {
+        boolean centinela = false;
+        for (Veterinario veterinario : veterinarios) {
+            if (veterinario.getLicencia().equals(licencia)) {
                 centinela = true;
             }
         }
