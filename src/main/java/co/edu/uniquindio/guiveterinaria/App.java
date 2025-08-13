@@ -1,8 +1,7 @@
 package co.edu.uniquindio.guiveterinaria;
 
 import co.edu.uniquindio.guiveterinaria.model.Mascota;
-import co.edu.uniquindio.guiveterinaria.viewController.ConsultaMedicaViewController;
-import co.edu.uniquindio.guiveterinaria.viewController.MascotaViewController;
+import co.edu.uniquindio.guiveterinaria.viewController.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,8 +10,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import co.edu.uniquindio.guiveterinaria.model.Cliente;
 import co.edu.uniquindio.guiveterinaria.model.Empresa;
-import co.edu.uniquindio.guiveterinaria.viewController.ClienteViewController;
-import co.edu.uniquindio.guiveterinaria.viewController.PrimaryController;
 
 /**
  * JavaFX App
@@ -92,6 +89,23 @@ public class App extends Application {
             AnchorPane rootLayout = (AnchorPane) loader.load();
             ConsultaMedicaViewController consultaMedicaViewController = loader.getController();
             consultaMedicaViewController.setApp(this);
+
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    public void openCrudVeterinario() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("crudVeterinario.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            VeterinarioViewController veterinarioViewController = loader.getController();
+            veterinarioViewController.setApp(this);
 
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
