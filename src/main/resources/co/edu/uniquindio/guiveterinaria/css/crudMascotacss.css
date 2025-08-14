@@ -1,0 +1,77 @@
+.root {
+    -fx-background-color: #f4f4f4; /* Gris claro profesional */
+}
+
+
+.pane, .anchor-pane {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #dcdcdc;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10;
+}
+
+
+.label.titulo {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50; /* Azul gris elegante */
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.25) , 4,0,0,2 );
+    -fx-padding: 5 0 15 0;
+}
+
+
+.label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #333333;
+}
+
+
+.text-field {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 5;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused {
+    -fx-border-color: #4a90e2;
+    -fx-effect: dropshadow(gaussian, rgba(74,144,226,0.4), 5,0,0,0);
+}
+
+
+.button {
+    -fx-background-color: linear-gradient(to bottom, #4a90e2, #357ABD);
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #5aa1f2, #4a90e2);
+}
+
+.button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #357ABD, #2c5f91);
+}
+
+
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #dcdcdc;
+}
+
+.table-view .column-header {
+    -fx-background-color: #4a90e2;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:filled:selected {
+    -fx-background-color: #d0e6fa;
+}
