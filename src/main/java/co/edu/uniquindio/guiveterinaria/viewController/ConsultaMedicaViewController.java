@@ -57,6 +57,9 @@ public class ConsultaMedicaViewController {
     private TableColumn<?, ?> tbcPropietario;
 
     @FXML
+    private TableColumn<?, ?> tbcVeterinario;
+
+    @FXML
     private TableColumn<ConsultaMedica, String> tbcTratamiento;
 
     @FXML

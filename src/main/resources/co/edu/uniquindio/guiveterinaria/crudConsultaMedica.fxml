@@ -23,7 +23,7 @@
                      <items>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="288.0" prefWidth="401.0">
                            <children>
-                              <Pane layoutX="34.0" layoutY="20.0" prefHeight="249.0" prefWidth="360.0" style="-fx-border-image-width: 1px;">
+                              <Pane layoutX="31.0" layoutY="20.0" prefHeight="249.0" prefWidth="399.0" style="-fx-border-image-width: 1px;">
                                  <effect>
                                     <Blend />
                                  </effect>
@@ -38,27 +38,27 @@
                                           <Font size="18.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="41.0" layoutY="112.0" text="Mascota:">
+                                    <Label layoutX="77.0" layoutY="111.0" text="Mascota:">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
                                     </Label>
                                     <TextField fx:id="txtNumeroConsulta" layoutX="22.0" layoutY="85.0" prefHeight="25.0" prefWidth="108.0" />
-                                    <Button fx:id="btbAgregarConsulta" layoutX="126.0" layoutY="237.0" mnemonicParsing="false" onAction="#onAgregarConsulta" text="Agregar Consulta" />
-                                    <ComboBox fx:id="cbMascota" layoutX="22.0" layoutY="139.0" prefHeight="25.0" prefWidth="108.0" />
+                                    <Button fx:id="btbAgregarConsulta" layoutX="142.0" layoutY="237.0" mnemonicParsing="false" onAction="#onAgregarConsulta" text="Agregar Consulta" />
+                                    <ComboBox fx:id="cbMascota" layoutX="58.0" layoutY="139.0" prefHeight="25.0" prefWidth="108.0" />
                                     <Label layoutX="227.0" layoutY="111.0" text="Propietario:">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
                                     </Label>
                                     <ComboBox fx:id="cbPropietario" layoutX="219.0" layoutY="139.0" prefHeight="25.0" prefWidth="108.0" />
-                                    <Label layoutX="248.0" layoutY="58.0" text="Fecha:">
+                                    <Label layoutX="172.0" layoutY="58.0" text="Fecha:">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
                                     </Label>
-                                    <DatePicker fx:id="elegirFecha" layoutX="219.0" layoutY="85.0" prefHeight="25.0" prefWidth="108.0" />
-                                    <Label layoutX="22.0" layoutY="171.0" prefHeight="27.0" prefWidth="108.0" text="Diagnostico:">
+                                    <DatePicker fx:id="elegirFecha" layoutX="143.0" layoutY="85.0" prefHeight="25.0" prefWidth="108.0" />
+                                    <Label layoutX="58.0" layoutY="171.0" prefHeight="27.0" prefWidth="108.0" text="Diagnostico:">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
@@ -68,8 +68,14 @@
                                           <Font size="18.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="txtTratamiento" layoutX="22.0" layoutY="198.0" prefHeight="25.0" prefWidth="108.0" />
+                                    <TextField fx:id="txtTratamiento" layoutX="58.0" layoutY="198.0" prefHeight="25.0" prefWidth="108.0" />
                                     <TextField fx:id="txtDiagnostico" layoutX="219.0" layoutY="198.0" prefHeight="25.0" prefWidth="108.0" />
+                                    <ComboBox fx:id="cbVeterinario" layoutX="265.0" layoutY="85.0" prefHeight="25.0" prefWidth="108.0" />
+                                    <Label layoutX="273.0" layoutY="58.0" text="Veterinario:">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
                                  </children>
                               </Pane>
                            </children>
@@ -78,12 +84,14 @@
                            <children>
                               <TableView fx:id="tblListConsultaMedicas" layoutX="7.0" layoutY="7.0" prefHeight="206.0" prefWidth="455.0">
                                  <columns>
-                                    <TableColumn fx:id="tbcINumConsulta" prefWidth="75.0" text="# Consulta" />
-                                    <TableColumn fx:id="tbcFecha" prefWidth="75.0" text="Fecha" />
-                                    <TableColumn fx:id="tbcMascota" prefWidth="75.0" text="Mascota" />
-                                     <TableColumn fx:id="tbcPropietario" prefWidth="75.0" text="Propietario" />
-                                     <TableColumn fx:id="tbcDiagnostico" prefWidth="75.0" text="Diagnostico" />
-                                     <TableColumn fx:id="tbcTratamiento" prefWidth="75.0" text="Tratamiento" />
+                                    <TableColumn fx:id="tbcINumConsulta" prefWidth="65.0" text="# Consulta" />
+                                    <TableColumn fx:id="tbcFecha" prefWidth="41.0" text="Fecha" />
+                                    <TableColumn fx:id="tbcMascota" prefWidth="52.0" text="Mascota" />
+                                     <TableColumn fx:id="tbcPropietario" prefWidth="69.0" text="Propietario" />
+                                     <TableColumn fx:id="tbcDiagnostico" prefWidth="74.0" text="Diagnostico" />
+                                     <TableColumn fx:id="tbcTratamiento" minWidth="0.0" prefWidth="77.0" text="Tratamiento" />
+                                    <TableColumn fx:id="tbcVeterinario" prefWidth="76.0" text="Veterinario" />
+
                                  </columns>
                               </TableView>
                               <Button fx:id="btnEliminar" layoutX="165.0" layoutY="222.0" mnemonicParsing="false" onAction="#onEliminar" prefHeight="25.0" prefWidth="97.0" text="Eliminar" />
