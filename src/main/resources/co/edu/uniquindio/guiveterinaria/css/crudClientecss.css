@@ -2,7 +2,6 @@
     -fx-background-color: #4a4a4a;
 }
 
-
 .titulo {
     -fx-font-size: 32px;
     -fx-font-weight: bold;
@@ -13,12 +12,10 @@
     -fx-alignment: center;
 }
 
-
 .label {
     -fx-text-fill: white;
     -fx-font-size: 16px;
 }
-
 
 .text-field {
     -fx-background-color: #ffffff;
@@ -28,11 +25,11 @@
     -fx-border-width: 1;
     -fx-padding: 5;
 }
+
 .text-field:focused {
     -fx-border-color: #4a90e2;
     -fx-border-width: 2;
 }
-
 
 .boton {
     -fx-background-color: linear-gradient(to bottom, #5aa0e8, #357ABD);
@@ -45,24 +42,27 @@
     -fx-cursor: hand;
     -fx-border-color: transparent;
 }
+
 .boton:hover {
     -fx-background-color: linear-gradient(to bottom, #6fb5f0, #3e88c7);
 }
 
-
+/* --- ESTILO TABLA --- */
 .table-view {
-    -fx-background-color: white;
-    -fx-border-color: #cccccc;
-    -fx-border-width: 1;
+    -fx-background-color: #4a4a4a; /* Fondo igual al resto */
+    -fx-border-color: white; /* Borde blanco */
+    -fx-border-width: 2;
     -fx-background-radius: 4;
     -fx-border-radius: 4;
+    -fx-table-cell-border-color: transparent;
 }
 
 .table-view .column-header-background {
-    -fx-background-color: linear-gradient(to bottom, #5aa0e8, #357ABD);
+    -fx-background-color: linear-gradient(to bottom, #5aa0e8, #357ABD); /* Azul encabezado */
 }
 
-.table-view .column-header, .table-view .filler {
+.table-view .column-header,
+.table-view .filler {
     -fx-size: 28px;
     -fx-border-color: transparent transparent #cccccc transparent;
     -fx-border-width: 0 0 1 0;
@@ -70,7 +70,7 @@
 }
 
 .table-view .column-header .label {
-    -fx-text-fill: black;
+    -fx-text-fill: white; /* Texto encabezado blanco */
     -fx-font-weight: bold;
 }
 
