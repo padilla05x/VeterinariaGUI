@@ -1,68 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Blend?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="586.0" prefWidth="501.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.guiveterinaria.viewController.ConsultaMedicaViewController">
+<AnchorPane prefHeight="586.0" prefWidth="501.0" styleClass="anchor-pane" stylesheets="@css/crudConsultaMedicacss.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.guiveterinaria.viewController.ConsultaMedicaViewController">
    <children>
-      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="576.0" prefWidth="443.0">
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="576.0" prefWidth="443.0" styleClass="anchor-pane">
          <children>
-            <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="455.0">
+            <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="455.0" styleClass="anchor-pane">
                <children>
-                  <SplitPane dividerPositions="0.5159574468085106" orientation="VERTICAL" prefHeight="566.0" prefWidth="464.0">
+                  <SplitPane dividerPositions="0.5159574468085106" orientation="VERTICAL" prefHeight="566.0" prefWidth="464.0" styleClass="anchor-pane">
                      <items>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="288.0" prefWidth="401.0">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="288.0" prefWidth="401.0" styleClass="anchor-pane">
                            <children>
-                              <Pane layoutX="31.0" layoutY="20.0" prefHeight="249.0" prefWidth="399.0" style="-fx-border-image-width: 1px;">
+                              <Pane layoutX="34.0" layoutY="-1.0" prefHeight="270.0" prefWidth="412.0" style="-fx-border-image-width: 1px;" styleClass="anchor-pane">
                                  <effect>
                                     <Blend />
                                  </effect>
                                  <children>
-                                    <Label layoutX="80.0" layoutY="14.0" prefHeight="27.0" prefWidth="248.0" text="Gestión Consulta Medica">
+                                    <Label layoutX="19.0" layoutY="8.0" prefHeight="55.0" prefWidth="351.0" styleClass="titulo" text="Gestión Consulta Medica">
                                        <font>
                                           <Font name="System Bold" size="18.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="27.0" layoutY="58.0" prefHeight="27.0" prefWidth="97.0" text="# Consulta:">
+                                    <Label layoutX="28.0" layoutY="45.0" prefHeight="27.0" prefWidth="97.0" text="# Consulta:">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="77.0" layoutY="111.0" text="Mascota:">
+                                    <Label layoutX="41.0" layoutY="112.0" text="Mascota:">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
                                     </Label>
+ 
                                     <TextField fx:id="txtNumeroConsulta" layoutX="22.0" layoutY="85.0" prefHeight="25.0" prefWidth="108.0" />
                                     <Button fx:id="btbAgregarConsulta" layoutX="142.0" layoutY="237.0" mnemonicParsing="false" onAction="#onAgregarConsulta" text="Agregar Consulta" />
                                     <ComboBox fx:id="cbMascota" layoutX="58.0" layoutY="139.0" prefHeight="25.0" prefWidth="108.0" promptText="Elegir" />
                                     <Label layoutX="227.0" layoutY="111.0" text="Propietario:">
+
+                                   
+
                                        <font>
                                           <Font size="18.0" />
                                        </font>
                                     </Label>
+
                                     <ComboBox fx:id="cbPropietario" layoutX="219.0" layoutY="139.0" prefHeight="25.0" prefWidth="108.0" promptText="Elegir" />
                                     <Label layoutX="172.0" layoutY="58.0" text="Fecha:">
+
+                                  
+
                                        <font>
                                           <Font size="18.0" />
                                        </font>
                                     </Label>
-                                    <DatePicker fx:id="elegirFecha" layoutX="143.0" layoutY="85.0" prefHeight="25.0" prefWidth="108.0" />
-                                    <Label layoutX="58.0" layoutY="171.0" prefHeight="27.0" prefWidth="108.0" text="Diagnostico:">
+                                    <DatePicker fx:id="elegirFecha" layoutX="219.0" layoutY="72.0" prefHeight="25.0" prefWidth="108.0" styleClass="date-picker" />
+                                    <Label layoutX="23.0" layoutY="176.0" prefHeight="27.0" prefWidth="108.0" text="Diagnostico:">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
                                     </Label>
+
                                     <Label layoutX="219.0" layoutY="171.0" prefHeight="27.0" prefWidth="108.0" text="Tratamiento:">
                                        <font>
                                           <Font size="18.0" />
@@ -72,30 +73,32 @@
                                     <TextField fx:id="txtDiagnostico" layoutX="58.0" layoutY="198.0" prefHeight="25.0" prefWidth="108.0" />
                                     <ComboBox fx:id="cbVeterinario" layoutX="265.0" layoutY="85.0" prefHeight="25.0" prefWidth="108.0" promptText="Elegir" />
                                     <Label layoutX="273.0" layoutY="58.0" text="Veterinario:">
+
+
                                        <font>
                                           <Font size="18.0" />
                                        </font>
                                     </Label>
+                                    <TextField fx:id="txtTratamiento" layoutX="23.0" layoutY="206.0" prefHeight="25.0" prefWidth="108.0" />
+                                    <TextField fx:id="txtDiagnostico" layoutX="217.0" layoutY="206.0" prefHeight="25.0" prefWidth="108.0" />
                                  </children>
                               </Pane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="271.0" prefWidth="645.0">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="261.0" prefWidth="562.0" styleClass="anchor-pane">
                            <children>
-                              <TableView fx:id="tblListConsultaMedicas" layoutX="7.0" layoutY="7.0" prefHeight="206.0" prefWidth="455.0">
+                              <TableView fx:id="tblListConsultaMedicas" layoutX="-10.0" layoutY="6.0" prefHeight="195.0" prefWidth="476.0" stylesheets="@css/crudConsultaMedicacss.css">
                                  <columns>
-                                    <TableColumn fx:id="tbcINumConsulta" prefWidth="65.0" text="# Consulta" />
-                                    <TableColumn fx:id="tbcFecha" prefWidth="41.0" text="Fecha" />
-                                    <TableColumn fx:id="tbcMascota" prefWidth="52.0" text="Mascota" />
-                                     <TableColumn fx:id="tbcPropietario" prefWidth="69.0" text="Propietario" />
-                                     <TableColumn fx:id="tbcDiagnostico" prefWidth="74.0" text="Diagnostico" />
-                                     <TableColumn fx:id="tbcTratamiento" minWidth="0.0" prefWidth="77.0" text="Tratamiento" />
-                                    <TableColumn fx:id="tbcVeterinario" prefWidth="76.0" text="Veterinario" />
-
+                                    <TableColumn fx:id="tbcINumConsulta" prefWidth="75.0" text="# Consulta" />
+                                    <TableColumn fx:id="tbcFecha" prefWidth="75.0" text="Fecha" />
+                                    <TableColumn fx:id="tbcMascota" prefWidth="75.0" text="Mascota" />
+                                     <TableColumn fx:id="tbcPropietario" prefWidth="75.0" text="Propietario" />
+                                     <TableColumn fx:id="tbcDiagnostico" prefWidth="82.0" text="Diagnostico" />
+                                     <TableColumn fx:id="tbcTratamiento" prefWidth="79.0" text="Tratamiento" />
                                  </columns>
                               </TableView>
-                              <Button fx:id="btnEliminar" layoutX="165.0" layoutY="222.0" mnemonicParsing="false" onAction="#onEliminar" prefHeight="25.0" prefWidth="97.0" text="Eliminar" />
-                              <Button fx:id="btnRegresar" layoutX="349.0" layoutY="222.0" mnemonicParsing="false" onAction="#onRegresar" prefHeight="25.0" prefWidth="64.0" text="Regresar" />
+                              <Button fx:id="btnEliminar" layoutX="164.0" layoutY="222.0" mnemonicParsing="false" onAction="#onEliminar" prefHeight="25.0" prefWidth="97.0" text="Eliminar" />
+                              <Button fx:id="btnRegresar" layoutX="328.0" layoutY="222.0" mnemonicParsing="false" onAction="#onRegresar" prefHeight="38.0" prefWidth="97.0" text="Regresar" />
                            </children>
                         </AnchorPane>
                      </items>
