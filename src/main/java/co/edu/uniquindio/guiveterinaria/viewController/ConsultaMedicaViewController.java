@@ -16,6 +16,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static co.edu.uniquindio.guiveterinaria.App.empresa;
 
 public class ConsultaMedicaViewController {
@@ -49,19 +52,19 @@ public class ConsultaMedicaViewController {
     private TableColumn<ConsultaMedica, String> tbcDiagnostico;
 
     @FXML
-    private TableColumn<?, ?> tbcFecha;
+    private TableColumn<ConsultaMedica, String> tbcFecha;
 
     @FXML
     private TableColumn<ConsultaMedica, String> tbcINumConsulta;
 
     @FXML
-    private TableColumn<?, ?> tbcMascota;
+    private TableColumn<ConsultaMedica, String> tbcMascota;
 
     @FXML
-    private TableColumn<Cliente, String> tbcPropietario;
+    private TableColumn<ConsultaMedica, String> tbcPropietario;
 
     @FXML
-    private TableColumn<?, ?> tbcVeterinario;
+    private TableColumn<ConsultaMedica, String> tbcVeterinario;
 
     @FXML
     private TableColumn<ConsultaMedica, String> tbcTratamiento;
@@ -125,13 +128,31 @@ public class ConsultaMedicaViewController {
         listenerSelection();
     }
 
-
     private void initDataBinding() {
         tbcINumConsulta.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNumeroConsulta()));
         tbcDiagnostico.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDiagnostico()));
         tbcTratamiento.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getTratamientoAplicado()));
-
         // FALTAN EL RESTO QUE NO SE COMO PONERLOS (FECHA, PROPIETARIO Y MASCOTA)
+
+        tbcFecha.setCellValueFactory(cellData ->
+                new SimpleStringProperty(cellData.getValue().getFecha() != null
+                        ? cellData.getValue().getFecha().toString()
+                        : ""));
+
+        tbcPropietario.setCellValueFactory(cellData ->
+                new SimpleStringProperty(cellData.getValue().getClientePropietario() != null
+                        ? cellData.getValue().getClientePropietario().getNombre()
+                        : ""));
+
+        tbcMascota.setCellValueFactory(cellData ->
+                new SimpleStringProperty(cellData.getValue().getMascotaAtentida() != null
+                        ? cellData.getValue().getMascotaAtentida().getNombre()
+                        : ""));
+
+        tbcVeterinario.setCellValueFactory(cellData ->
+                new SimpleStringProperty(cellData.getValue().getVeterinario() != null
+                        ? cellData.getValue().getVeterinario().getNombre()
+                        : ""));
     }
 
     private void obtenerConsultaMedicas() {
@@ -162,9 +183,15 @@ public class ConsultaMedicaViewController {
     }
 
     private ConsultaMedica buildConsultaMedica() {
-        ConsultaMedica consultaMedica = new ConsultaMedica(txtNumeroConsulta.getText(), txtTratamiento.getText(), txtDiagnostico.getText());
-
-        return consultaMedica;
+        return new ConsultaMedica(
+                elegirFecha.getValue(),
+                cbMascota.getValue(),
+                cbPropietario.getValue(),
+                cbVeterinario.getValue(),
+                txtNumeroConsulta.getText(),
+                txtDiagnostico.getText(),
+                txtTratamiento.getText()
+        );
     }
 
     private void eliminarConsultaMedica() {

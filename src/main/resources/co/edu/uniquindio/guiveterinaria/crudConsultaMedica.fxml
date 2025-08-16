@@ -45,13 +45,13 @@
                                     </Label>
                                     <TextField fx:id="txtNumeroConsulta" layoutX="22.0" layoutY="85.0" prefHeight="25.0" prefWidth="108.0" />
                                     <Button fx:id="btbAgregarConsulta" layoutX="142.0" layoutY="237.0" mnemonicParsing="false" onAction="#onAgregarConsulta" text="Agregar Consulta" />
-                                    <ComboBox fx:id="cbMascota" layoutX="58.0" layoutY="139.0" prefHeight="25.0" prefWidth="108.0" />
+                                    <ComboBox fx:id="cbMascota" layoutX="58.0" layoutY="139.0" prefHeight="25.0" prefWidth="108.0" promptText="Elegir" />
                                     <Label layoutX="227.0" layoutY="111.0" text="Propietario:">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
                                     </Label>
-                                    <ComboBox fx:id="cbPropietario" layoutX="219.0" layoutY="139.0" prefHeight="25.0" prefWidth="108.0" />
+                                    <ComboBox fx:id="cbPropietario" layoutX="219.0" layoutY="139.0" prefHeight="25.0" prefWidth="108.0" promptText="Elegir" />
                                     <Label layoutX="172.0" layoutY="58.0" text="Fecha:">
                                        <font>
                                           <Font size="18.0" />
@@ -68,9 +68,9 @@
                                           <Font size="18.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="txtTratamiento" layoutX="58.0" layoutY="198.0" prefHeight="25.0" prefWidth="108.0" />
-                                    <TextField fx:id="txtDiagnostico" layoutX="219.0" layoutY="198.0" prefHeight="25.0" prefWidth="108.0" />
-                                    <ComboBox fx:id="cbVeterinario" layoutX="265.0" layoutY="85.0" prefHeight="25.0" prefWidth="108.0" />
+                                    <TextField fx:id="txtTratamiento" layoutX="211.0" layoutY="198.0" prefHeight="25.0" prefWidth="108.0" />
+                                    <TextField fx:id="txtDiagnostico" layoutX="58.0" layoutY="198.0" prefHeight="25.0" prefWidth="108.0" />
+                                    <ComboBox fx:id="cbVeterinario" layoutX="265.0" layoutY="85.0" prefHeight="25.0" prefWidth="108.0" promptText="Elegir" />
                                     <Label layoutX="273.0" layoutY="58.0" text="Veterinario:">
                                        <font>
                                           <Font size="18.0" />
