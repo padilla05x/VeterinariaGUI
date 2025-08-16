@@ -1,5 +1,8 @@
 package co.edu.uniquindio.guiveterinaria.model;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.util.Collection;
 import java.util.LinkedList;
 
@@ -30,8 +33,16 @@ public class Empresa {
         return clientes;
     }
 
+    public ObservableList<Cliente> getClientesObservable() {
+        return FXCollections.observableArrayList(clientes);
+    }
+
     public Collection<Mascota> getMascotas() {
         return mascotas;
+    }
+
+    public ObservableList<Mascota> getMascotasObservable() {
+        return FXCollections.observableArrayList(mascotas);
     }
 
     public Collection<ConsultaMedica> getConsultaMedicas() {
@@ -53,6 +64,11 @@ public class Empresa {
     public Collection<Veterinario> getVeterinarios() {
         return veterinarios;
     }
+
+    public ObservableList<Veterinario> getVeterinariosObservable() {
+        return FXCollections.observableArrayList(veterinarios);
+    }
+
 
     public void setVeterinarios(Collection<Veterinario> veterinarios) {
         this.veterinarios = veterinarios;

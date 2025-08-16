@@ -3,8 +3,7 @@ package co.edu.uniquindio.guiveterinaria.viewController;
 import co.edu.uniquindio.guiveterinaria.App;
 import co.edu.uniquindio.guiveterinaria.controller.ClienteController;
 import co.edu.uniquindio.guiveterinaria.controller.ConsultaMedicaController;
-import co.edu.uniquindio.guiveterinaria.model.Cliente;
-import co.edu.uniquindio.guiveterinaria.model.ConsultaMedica;
+import co.edu.uniquindio.guiveterinaria.model.*;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,6 +15,8 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+
+import static co.edu.uniquindio.guiveterinaria.App.empresa;
 
 public class ConsultaMedicaViewController {
 
@@ -33,10 +34,13 @@ public class ConsultaMedicaViewController {
     private Button btnRegresar;
 
     @FXML
-    private ComboBox<?> cbMascota;
+    private ComboBox<Mascota> cbMascota;
 
     @FXML
-    private ComboBox<?> cbPropietario;
+    private ComboBox<Cliente> cbPropietario;
+
+    @FXML
+    private ComboBox<Veterinario> cbVeterinario;
 
     @FXML
     private DatePicker elegirFecha;
@@ -54,7 +58,7 @@ public class ConsultaMedicaViewController {
     private TableColumn<?, ?> tbcMascota;
 
     @FXML
-    private TableColumn<?, ?> tbcPropietario;
+    private TableColumn<Cliente, String> tbcPropietario;
 
     @FXML
     private TableColumn<?, ?> tbcVeterinario;
@@ -95,7 +99,12 @@ public class ConsultaMedicaViewController {
     @FXML
     void initialize() {
         this.app=app;
-        consultaMedicaController = new ConsultaMedicaController(app.empresa);
+
+        // LLENAR COMBOBOX
+        cbPropietario.setItems(empresa.getClientesObservable());
+        cbVeterinario.setItems(empresa.getVeterinariosObservable());
+        cbMascota.setItems(empresa.getMascotasObservable());
+        consultaMedicaController = new ConsultaMedicaController(empresa);
         initView();
     }
 
@@ -115,6 +124,7 @@ public class ConsultaMedicaViewController {
         // Seleccionar elemento de la tabla
         listenerSelection();
     }
+
 
     private void initDataBinding() {
         tbcINumConsulta.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNumeroConsulta()));
@@ -153,6 +163,7 @@ public class ConsultaMedicaViewController {
 
     private ConsultaMedica buildConsultaMedica() {
         ConsultaMedica consultaMedica = new ConsultaMedica(txtNumeroConsulta.getText(), txtTratamiento.getText(), txtDiagnostico.getText());
+
         return consultaMedica;
     }
 

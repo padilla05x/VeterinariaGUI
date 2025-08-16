@@ -51,5 +51,10 @@ public class Mascota {
         this.edad = edad;
     }
 
+    @Override
+    public String toString() {
+        return nombre + " (" + iDVeterinaria + ")";
+    }
+
 
 }

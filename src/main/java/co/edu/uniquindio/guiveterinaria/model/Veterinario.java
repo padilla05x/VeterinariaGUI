@@ -32,4 +32,9 @@ public class Veterinario {
     public void setLicencia(String licencia) {
         this.licencia = licencia;
     }
+
+    @Override
+    public String toString() {
+        return nombre + " (" + licencia + ")";
+    }
 }
