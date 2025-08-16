@@ -6,6 +6,14 @@
 
 <VBox alignment="CENTER" spacing="20.0" styleClass="fondo" stylesheets="@css/Primarycss.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.guiveterinaria.viewController.PrimaryController">
     <children>
+
+        <Label text="¡Bienvenido a la Veterinaria!" textAlignment="CENTER" />
+        <Button fx:id="primaryButton" onAction="#onOpenCrudCliente" prefHeight="25.0" prefWidth="140.0" text="Gestión de clientes" />
+      <Button fx:id="primaryButton1" onAction="#onOpenCrudMascota" prefHeight="25.0" prefWidth="138.0" text="Gestión de mascotas" />
+      <Button fx:id="primaryButton3" onAction="#onOpenCrudVeterinario" prefHeight="25.0" prefWidth="138.0" text="Gestión de veterinarios" />
+        <Button fx:id="primaryButton2" onAction="#onOpenCrudConsultaMedica" prefHeight="25.0" prefWidth="138.0" text="Gestión de consultas" />
+
+
         <Label stylesheets="@css/Primarycss.css" text="Bienvenido a la Veterinaria" />
         <Button fx:id="primaryButton" onAction="#onOpenCrudCliente" styleClass="boton" stylesheets="@css/Primarycss.css" text="Gestión de clientes" />
       <Button fx:id="primaryButton1" onAction="#onOpenCrudMascota" styleClass="boton" stylesheets="@css/Primarycss.css" text="Gestión de mascotas" />
